@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+node_modules/
+data/documents.json
+results/*.json
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/chroma/
+eval/no-context-results.md

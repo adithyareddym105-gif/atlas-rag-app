@@ -1,0 +1,11 @@
+# Configuration, Operations, and Troubleshooting
+
+The application requires Node.js 18 or newer. Install dependencies with npm install, copy .env.example to .env, configure the language-model settings, run npm test, and start the service with npm start. The default local address is http://localhost:3000. The .env file may contain a private API key and must not be committed to version control.
+
+The language-model integration reads LLM_API_KEY and LLM_MODEL from the environment. LLM_BASE_URL is optional and defaults to the OpenAI-compatible Groq endpoint. The server checks that a response contains a non-empty answer string under 20,000 characters before returning it to the frontend. Provider failures, missing configuration, invalid requests, empty retrieval results, and unavailable documents produce controlled error responses rather than a fabricated successful answer.
+
+Chunk size is constrained to a range between 40 and 500 words. Overlap must be non-negative and smaller than the chunk size. The top-k setting controls how many ranked passages are sent to the language model, with a maximum of eight in the question-answering endpoint. Increasing top-k can improve coverage for split answers, but it can also add distracting passages and increase the amount of context sent to the model.
+
+The CLI evaluation command is npm run evaluate. It runs the baseline configuration (180 words with 35 words of overlap) and the smaller-chunk configuration (100 words with 20 words of overlap) on both the Kestrel and custom question sets, then writes a timestamped JSON result under results/. The frontend Evaluation view also supports comparing configurations and saving results. Results should be inspected before they are described in a report; they should not be copied from an earlier run if the corpus or question set has changed.
+
+Words Analytics provides corpus mode and question mode. Corpus mode shows word frequency and the number and location of chunks containing a word. Question mode shows which question terms occur in the corpus and where they occur. If a retrieval miss occurs, this view can help distinguish an absent term from a term that appears in many irrelevant chunks. It cannot determine semantic relevance by itself, so the retrieved passages still need to be read manually.

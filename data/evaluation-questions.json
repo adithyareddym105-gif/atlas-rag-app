@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Q1",
+    "question": "Replace this with a question answerable from your uploaded corpus.",
+    "expectedAnswer": "Replace with the expected answer.",
+    "expectedSource": "replace-with-source-file.md",
+    "expectedContains": "replace with a phrase that should appear in the relevant passage",
+    "unanswerable": false
+  },
+  {
+    "id": "Q2",
+    "question": "Ask about a detail that is present in a different document.",
+    "expectedAnswer": "Replace with the expected answer.",
+    "expectedSource": "replace-with-another-source.txt",
+    "expectedContains": "replace with an expected phrase",
+    "unanswerable": false
+  },
+  {
+    "id": "Q3",
+    "question": "Ask a question whose answer is not present in the uploaded corpus.",
+    "expectedAnswer": "The corpus does not provide this information.",
+    "expectedSource": "",
+    "expectedContains": "",
+    "unanswerable": true
+  }
+]
