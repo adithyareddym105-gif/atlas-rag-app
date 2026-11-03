@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-11-03T17:24:43.781401",
+  "model": "gemini-3.5-flash-lite",
+  "method": "LLM generation without retrieved document context",
+  "total": 22,
+  "results": [
+    {
+      "corpus": "kestrel",
+      "id": "q01",
+      "question": "What does error KST-2044 mean and how do I fix it?",
+      "answerable": true,
+      "expected_answer": "The data source refused the connection because the Kestrel IP addresses are not on its allowlist. Add both 203.0.113.10 and 203.0.113.11; adding only one causes intermittent errors.",
+      "no_context_answer": "I cannot reliably answer this question because \"error KST-2044\" is not a standard, universally recognized error code within public knowledge or standard programming/operating system documentation. It appears to be specific to a particular proprietary software application, internal system, or company database that I do not have access to. \n\nTherefore, without access to company-specific documentation or context, I cannot tell you what this error means or how to fix it. Please consult your organization's internal documentation, IT support, or the specific software vendor's help desk for assistance.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q02",
+      "question": "A user gets KST-4012 when accepting an invitation. What should support tell them?",
+      "answerable": true,
+      "expected_answer": "There is no free seat. An Admin must free a seat, or the Owner must add seats or upgrade. The same invitation then works if it is less than 7 days old.",
+      "no_context_answer": "I cannot reliably know the answer because \"KST-4012\" appears to be a specific internal error code, product code, or proprietary system message tied to a specific company's software or platform. Without access to company-specific documentation, I do not know what this error code signifies or what troubleshooting steps are required.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q03",
+      "question": "What happens, step by step, when a customer's card payment fails?",
+      "answerable": true,
+      "expected_answer": "E-mail to the Owner and billing contact, retries after 1, 3 and 7 days, then a 21-day grace period (everything works), then read-only, then suspension at 60 days. Nothing is deleted.",
+      "no_context_answer": "When a customer's card payment fails, the exact step-by-step process can vary slightly depending on the payment gateway, merchant, and banking institution, but the standard technical and customer-facing sequence generally unfolds as follows:\n\n### 1. Authorization Request\n* **Initiation:** The customer attempts to make a purchase and enters their card details (or taps/swipes their card).\n* **Transmission:** The merchant's point-of-sale (POS) system or e-commerce checkout software sends the payment details securely to their payment gateway or payment processor.\n* **Routing:** The payment processor routes the request through a card network (such as Visa, Mastercard, American Express) to the customer’s issuing bank.\n\n### 2. Decline Decision by the Issuing Bank\n* **Evaluation:** The customer's bank reviews the transaction against various criteria, such as:\n  * Available account funds or credit limit.\n  * Correctness of the CVV (security code) and billing ZIP/postal code.\n  * Fraud detection algorithms (suspicious location, unusual purchase amount, etc.).\n  * Card status (expired, blocked, reported lost/stolen, or restricted).\n* **The Decline:** If any check fails, the issuing bank denies the transaction and generates a specific decline code (e.g., \"Insufficient Funds,\" \"Do Not Honor,\" \"Expired Card\").\n\n### 3. Communication Back to the Merchant\n* **Relay:** The decline code is sent back through the card network and the payment processor to the merchant's system.\n* **Translation:** The payment gateway translates the technical bank code into a user-friendly message for the checkout interface.\n\n### 4. Customer Notification\n* **Error Display:** The merchant’s system displays an error message to the customer (e.g., *\"Your payment could not be processed. Please check your card details or try another payment method.\"*). \n* **No Funds Withdrawn:** Because the issuing bank declined the transaction, no money is transferred from the customer's account to the merchant. (Note: In some cases, a \"pending\" authorization hold might briefly appear on the customer's bank statement, but this typically drops off within a few business days without actual capture of funds).\n\n### 5. Resolution / Retry (Next Steps)\n* **Action by Customer:** The customer is usually given the opportunity to:\n  * Re-enter their payment details in case of a typo.\n  * Use a different credit or debit card.\n  * Use an alternative payment method (such as PayPal, Apple Pay, BNPL, or cash).\n  * Contact their bank to resolve the issue (e.g., to unblock international transactions or report a false fraud alert).",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q04",
+      "question": "Which plans include single sign-on, and how does an admin set it up?",
+      "answerable": true,
+      "expected_answer": "Business and Enterprise. An Admin opens Settings → Security → Single sign-on, downloads the Kestrel SP metadata, registers Kestrel in the identity provider, pastes the IdP metadata URL back, tests with one Admin, then enforces it.",
+      "no_context_answer": "I do not know the answer to this question because it depends entirely on the specific company, software, or service you are referring to, and I do not have access to company-specific documents, product tiers, or setup guides. Please consult the official pricing page and documentation of the specific service you are using for accurate details.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q05",
+      "question": "I lost my phone and I can't log in anymore. What can I do?",
+      "answerable": true,
+      "expected_answer": "Use a backup code. Without one, ask a workspace Admin to reset your second factor. If you are the only Admin or the Owner, contact support from the account's e-mail address; identity verification can take up to 2 business days.",
+      "no_context_answer": "Because I do not have access to your specific company's documents, account details, or IT policies, I cannot provide the exact steps for your specific situation. \n\nHowever, in general, if you have lost your phone and cannot log in due to Multi-Factor Authentication (MFA) or Two-Factor Authentication (2FA), standard procedures usually include:\n\n1. **Contact your IT Helpdesk or Administrator:** If this is a work account, your company's IT or security department will need to reset your MFA settings or issue a temporary bypass.\n2. **Use Backup Methods:** During the initial setup of your account, you may have been given backup codes, or you might have registered a secondary phone number, security key, or email address for recovery. Look for options on the login screen that say \"Try another way\" or \"Use a backup code.\"\n3. **Account Recovery for Personal Accounts:** If this is a personal account (such as Google, Apple, Microsoft, etc.), you will need to go through the platform's standard account recovery workflow, which typically involves answering security questions, verifying your identity via a recovery email, or submitting a support request.\n\nIf this is for a specific service or organization, you will need to reach out directly to their support or customer service team.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q06",
+      "question": "Can I get a refund on my annual plan 45 days after it renewed?",
+      "answerable": true,
+      "expected_answer": "Yes, under the current (March 2026) policy: annual plans are refundable within 60 days of renewal, pro-rated from the request date. The old 2025 policy allowed only 30 days.",
+      "no_context_answer": "I do not know the answer because I do not have access to your company's specific refund policies, terms of service, or account details. Refund policies for annual plans vary widely depending on the specific company, industry, and the terms you agreed to when you signed up. You will need to check the company's official refund policy or contact their customer support directly for assistance.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q07",
+      "question": "How much do I save by paying annually instead of monthly?",
+      "answerable": true,
+      "expected_answer": "20% compared with twelve months of monthly billing (it was 15% under the 2025 policy).",
+      "no_context_answer": "I do not know the answer to this question because it depends entirely on the specific company, product, or subscription plan you are referring to, and I do not have access to company-specific policies or pricing details.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q08",
+      "question": "Error KST-5031 happened on the last two scheduled reports. Which team should support contact, and where?",
+      "answerable": true,
+      "expected_answer": "Messaging, which owns postroom: post in #oncall-messaging as SEV-2. Outside 08:00–20:00 on weekdays, escalate to the Platform on-call.",
+      "no_context_answer": "I do not have access to company-specific documents, internal knowledge bases, or specific organizational error code definitions. Therefore, I cannot reliably know which team support should contact for Error KST-5031 or where they should reach them.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q09",
+      "question": "Is there a Kestrel mobile app for iPhone?",
+      "answerable": false,
+      "expected_answer": "Not in the documents.",
+      "no_context_answer": "Based on my existing knowledge, I cannot reliably confirm whether Kestrel currently offers a mobile app for the iPhone, as this would require up-to-date and specific information regarding their current software offerings.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "kestrel",
+      "id": "q10",
+      "question": "How much does one seat cost per month on the Business plan?",
+      "answerable": false,
+      "expected_answer": "Not in the documents (the billing policy says prices are on the pricing page).",
+      "no_context_answer": "I cannot answer this question because the specific pricing for a \"Business plan\" depends entirely on the company or service you are referring to (e.g., Slack, Microsoft 365, Notion, GitHub, etc.), and I do not have access to real-time pricing data or company-specific documents. Please check the official pricing page of the specific service you are interested in.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-01",
+      "question": "Which environment variable contains the language-model API key?",
+      "answerable": true,
+      "expected_answer": "The API key is configured with the LLM_API_KEY environment variable. LLM_MODEL specifies the model name.",
+      "no_context_answer": "Because different libraries, SDKs, and platforms use different conventions, there is no single universal environment variable for a language-model API key. However, the most common standard conventions depend on the provider:\n\n* **OpenAI:** `OPENAI_API_KEY`\n* **Anthropic:** `ANTHROPIC_API_KEY`\n* **Google (Gemini/Vertex):** `GEMINI_API_KEY` or `GOOGLE_API_KEY`\n* **Cohere:** `COHERE_API_KEY`\n* **Groq:** `GROQ_API_KEY`\n\nIf you are using a specific framework (like LangChain, LlamaIndex, or a specific company's internal tools), the required environment variable name will depend on that framework's documentation. \n\nIf this refers to a specific, proprietary company application or internal document, I do not have access to company documents and cannot reliably know the answer.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-02",
+      "question": "What is the complete workflow from a question to a grounded answer with sources?",
+      "answerable": true,
+      "expected_answer": "Choose a corpus and documents, configure chunk size and overlap, enter the question and top-k, then the server retrieves passages and sends them to the language model. The answer is returned with source references.",
+      "no_context_answer": "Based on general knowledge of modern Question-Answering (QA) systems—specifically Retrieval-Augmented Generation (RAG) frameworks—the complete workflow from a user's question to a grounded answer with sources typically follows these sequential steps:\n\n1. **User Query Input:** \n   The user submits a natural language question to the system.\n\n2. **Query Processing & Optimization (Optional):** \n   The system may analyze, clean, or expand the user's query. This can include correcting typos, generating synonyms, or breaking a complex question into multiple sub-questions to improve search effectiveness.\n\n3. **Information Retrieval (Search):** \n   The processed query is translated into a search format (such as dense vector embeddings for semantic search, sparse keywords for lexical search like BM25, or a hybrid of both). The system then queries a knowledge base, vector database, document store, or the web to retrieve the most relevant text chunks, documents, or passages.\n\n4. **Re-ranking (Optional):** \n   The initially retrieved documents are often passed through a cross-encoder or re-ranking model to score and re-order them by semantic relevance, ensuring the highest-quality context is prioritized and less relevant noise is filtered out.\n\n5. **Context Assembly:** \n   The top-ranked retrieved passages (along with their corresponding metadata, such as document titles, URLs, or chunk IDs) are formatted and injected into a structured prompt template alongside the user's original question.\n\n6. **Generation (Grounded Answering):** \n   The prompt—containing both the user's question and the retrieved external context—is fed into a Large Language Model (LLM). The LLM is instructed to synthesize an answer **strictly** using the provided context, minimizing hallucinations and grounding its response in the retrieved facts.\n\n7. **Citation and Source Attribution:** \n   As the LLM generates the answer, or via post-processing steps, the system maps statements in the generated text back to the specific source documents used, formatting them as citations, footnotes, or links.\n\n8. **Output Delivery:** \n   The final response—comprising the synthesized, grounded answer paired with explicit source citations—is delivered back to the user.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-03",
+      "question": "The search results do not understand my wording even though the documents discuss the same topic. Why might this happen?",
+      "answerable": true,
+      "expected_answer": "The current retriever is lexical rather than semantic. Synonyms and vocabulary mismatch can cause weak retrieval even when the topic is covered.",
+      "no_context_answer": "When search results fail to understand your wording even though the relevant documents discuss the topic, it is typically due to a mismatch between how you are phrasing the query and how the search system processes or indexes the text. \n\nHere are the most common reasons why this happens based on standard information retrieval and natural language processing principles:\n\n1. **Vocabulary Mismatch (Synonyms):** You might be using different terminology, acronyms, or jargon than the authors of the documents. For example, you might search for \"car crash,\" while the documents exclusively use \"vehicular collision.\" Traditional keyword search engines look for exact term matches rather than conceptual meanings.\n\n2. **Lack of Semantic Search Capabilities:** If the search engine relies strictly on keyword matching (like BM25 or basic boolean search) rather than modern semantic search (which uses vector embeddings and AI to understand intent and context), it will struggle when words do not overlap, even if the topic is the same.\n\n3. **Contextual Ambiguity:** Words can have multiple meanings depending on context. If your query uses a word with multiple definitions, the search engine might prioritize the wrong context or fail to disambiguate your intent.\n\n4. **Stop Words and Filtering:** Many search systems automatically remove \"stop words\" (common words like *the, is, at, which, on*). If your query relies heavily on these relational words to convey meaning, the core terms left behind might trigger irrelevant results.\n\n5. **Stemming and Lemmatization Issues:** Search engines often reduce words to their root forms (e.g., turning \"running\" into \"run\"). If the algorithm's linguistic rules fail to properly stem the words in your query or the documents, it can miss relevant matches.\n\n6. **Granularity and Document Length:** If the topic is discussed broadly across a large document, but your query is very specific, the search engine's ranking algorithm might not score that document high enough to surface it in the top results. Conversely, if the document is too brief, it may lack the density of keywords needed for a match.\n\n7. **Typos and Spelling Variations:** Minor spelling errors, regional spelling differences (e.g., *color* vs. *colour*), or hyphenation differences can prevent a match in systems that do not incorporate fuzzy matching.\n\nIf you cannot reliably bridge this gap, trying broader terms, synonyms, or rephrasing the question using the specific terminology found in one of the known documents often helps improve results.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-04",
+      "question": "What metrics are used to measure whether evidence was retrieved near the top of the results?",
+      "answerable": true,
+      "expected_answer": "The evaluation reports Recall@1, Recall@3, Recall@5, and Recall@10, both overall and broken down by question type.",
+      "no_context_answer": "Based on general information retrieval (IR) and search engine evaluation methodology, several standard metrics are used to measure whether relevant evidence or documents were retrieved near the top of the results list. \n\nCommon metrics include:\n\n1. **Mean Reciprocal Rank (MRR):** Measures how high the first relevant result appears in the ranked list. It is the reciprocal of the rank of the first correct answer (e.g., if the first relevant result is at rank 1, the score is 1.0; if it is at rank 2, the score is 0.5).\n2. **Normalized Discounted Cumulative Gain (NDCG):** Measures the quality of a ranking, giving higher weight to relevant documents appearing earlier in the list. NDCG at specific cutoff ranks (like NDCG@10) is frequently used to evaluate top-heavy relevance.\n3. **Precision at $k$ (P@$k$):** Measures the proportion of relevant items in the top $k$ results (e.g., Precision@3 or Precision@5).\n4. **Hit Rate at $k$ (or Recall at $k$):** Measures the percentage of queries for which at least one relevant document is retrieved within the top $k$ positions.\n5. **Mean Average Precision (MAP):** While it evaluates the entire list, variants and emphasis within MAP focus heavily on placing relevant items higher up to maximize the precision curve.\n\nBecause I do not have access to specific company documents, internal evaluation frameworks, or proprietary retrieval-augmented generation (RAG) benchmarks, this list represents standard industry practices rather than the exact metrics used by any specific organization.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-05",
+      "question": "How do I run the repeatable comparison of the two chunking configurations, and where are results stored?",
+      "answerable": true,
+      "expected_answer": "Run npm run evaluate. It compares 180-word chunks with 35-word overlap against 100-word chunks with 20-word overlap for both corpora and saves timestamped JSON output under results/.",
+      "no_context_answer": "I cannot answer this question because it refers to specific, internal company procedures, codebases, or documentation regarding \"chunking configurations\" that are not part of my general training data. Therefore, I do not know how to run this specific comparison or where your organization stores the results.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-06",
+      "question": "How can I tell whether a term from a question appears in many chunks or is absent from the corpus?",
+      "answerable": true,
+      "expected_answer": "Use Words Analytics: corpus mode shows word frequencies and chunk locations, while question mode checks terms from a question and lists where they appear.",
+      "no_context_answer": "I cannot answer this question as it refers to a specific system, pipeline, or corpus (specifically, a Retrieval-Augmented Generation or document search system) and internal company data or tools that I have no access to.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-07",
+      "question": "Which cloud region is used to store uploaded documents?",
+      "answerable": false,
+      "expected_answer": "The documents do not specify a cloud region. They describe local storage in data/documents.json.",
+      "no_context_answer": "I do not know the answer to this question, as I do not have access to your company's documents, internal systems, or specific deployment details.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-08",
+      "question": "What is the maximum number of retrieved passages sent to the model by the question-answering endpoint?",
+      "answerable": true,
+      "expected_answer": "The question-answering endpoint can send at most eight retrieved passages to the language model.",
+      "no_context_answer": "I cannot reliably know the answer to this question because it depends entirely on the specific implementation, configuration, and design of the internal company systems or third-party API being used, which are not specified and to which I have no access.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-09",
+      "question": "Why should retrieval recall not be presented as the answer accuracy score?",
+      "answerable": true,
+      "expected_answer": "Recall measures whether expected evidence was retrieved, not whether the model used it correctly. Generated answers require separate manual grading as correct, partial, wrong, or unsupported.",
+      "no_context_answer": "I cannot reliably know the specific context or definition of \"answer accuracy score\" intended here, as that terminology can vary across different evaluation frameworks, companies, or proprietary software. \n\nHowever, speaking generally about information retrieval (IR) and Retrieval-Augmented Generation (RAG) systems:\n\n1. **Retrieval Recall measures finding information, not generating correct answers:** Recall measures the proportion of relevant source documents or chunks that were successfully retrieved from a database. It does not evaluate whether the downstream system (like an LLM) actually used that information correctly, synthesized it without hallucination, or produced a factually correct final answer.\n2. **Presence does not equal utilization:** Just because a relevant document is retrieved (high recall) does not mean the answer generation model extracted the right facts from it or ignored distracting, irrelevant information also present in the retrieved context.\n3. **Different evaluation targets:** Retrieval recall evaluates the *search/retrieval* component of a pipeline, whereas answer accuracy evaluates the *generation/response* component. Conflating the two misrepresents how well the overall system is performing for the end user.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-10",
+      "question": "A generated answer contains a non-empty string but is extremely long. What validation limit is documented?",
+      "answerable": true,
+      "expected_answer": "The answer must be non-empty and shorter than 20,000 characters to pass the documented response check.",
+      "no_context_answer": "I do not have access to the specific documentation, company policy, or guidelines you are referring to. Therefore, I cannot reliably know what validation limit is documented for an extremely long, non-empty generated answer.",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-11",
+      "question": "How should I decide whether to replace questions that a model answers without retrieved context?",
+      "answerable": true,
+      "expected_answer": "Flag questions the model answers reliably without context; replace them or explicitly discuss why they provide weaker evidence of retrieval value.",
+      "no_context_answer": "Without access to specific company guidelines, proprietary frameworks, or organizational performance metrics, I cannot provide a definitive internal policy for your specific use case. \n\nHowever, from a general machine learning and Retrieval-Augmented Generation (RAG) system design perspective, deciding whether to replace or remove questions that a model can already answer correctly without retrieved context depends on a balance between **system efficiency**, **factual reliability**, and **user experience**. \n\nHere are the standard criteria practitioners use to make this decision:\n\n### 1. Factual Stability and Hallucination Risk\n* **Keep in RAG:** Even if a model knows a fact today, if that fact is subject to change (e.g., company pricing, current inventory, personnel updates, policy changes), relying on parametric memory alone risks hallucinations or outdated information. It is better to retrieve the live context to ensure accuracy.\n* **Consider Removing/Replacing:** If the question relies on stable, foundational knowledge (e.g., basic definitions, immutable historical facts, or standard coding syntax) where the model's internal knowledge is robust and unlikely to change, forcing retrieval adds unnecessary latency and cost.\n\n### 2. Cost, Latency, and Resource Constraints\n* **Retrieval Overhead:** Vector searches, embedding generation, and handling larger prompt contexts (filled with retrieved chunks) increase both latency and API/compute costs. \n* **Decision Rule:** If a question doesn't *benefit* from retrieval (because the model already answers it perfectly), keeping it in a test or evaluation dataset for retrieval systems can waste resources. In production, some architectures use a router to bypass the retrieval step entirely for simple queries (\"zero-shot routing\").\n\n### 3. Purpose of the Dataset (Evaluation vs. Training)\n* **If it's an Evaluation Benchmark:** If you are testing the performance of your *retrieval* system (e.g., measuring Retrieval Hit Rate or Mean Reciprocal Rank), questions that don't require context are poor test cases. They skew metrics because the model might get the right answer regardless of whether the retriever fetched relevant documents or garbage. You should replace them with questions that strictly depend on the private/retrieved data to prove the value of the RAG pipeline.\n* **If it's a User-Facing Query Log:** In real-world usage, users naturally ask a mix of general knowledge and context-specific questions. You generally do not \"replace\" user questions; instead, you optimize the system to handle both efficiently (e.g., via query classification).\n\n***\n\n*If this pertains to a specific internal evaluation benchmark, dataset curation task, or compliance standard at your organization, please consult your team's specific guidelines, as I do not have access to company-specific documentation.*",
+      "error": null,
+      "manual_grade": null
+    },
+    {
+      "corpus": "custom",
+      "id": "custom-12",
+      "question": "Does the app use dense embeddings and a vector database for semantic search?",
+      "answerable": true,
+      "expected_answer": "No. The current implementation uses BM25-style lexical search and does not create semantic embeddings or use a vector database.",
+      "no_context_answer": "Based on my existing knowledge, I do not have access to the specific app you are referring to, nor do I have access to any company documents or codebase details. Therefore, I cannot reliably answer whether that particular app uses dense embeddings and a vector database for semantic search.",
+      "error": null,
+      "manual_grade": null
+    }
+  ]
+}

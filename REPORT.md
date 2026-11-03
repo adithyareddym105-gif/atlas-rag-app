@@ -29,6 +29,14 @@ The evaluation command completed successfully using `npm run evaluate`. The repo
 
 A separate no-context baseline was conducted by submitting ten questions to the configured language model without providing retrieved document context. The responses were compared manually with the expected evidence.
 
+### Retrieval Error Analysis
+
+The evaluation identified weaknesses in multi-hop retrieval. For Kestrel question q08, the system retrieved the support runbook containing the KST-5031 escalation instructions, but the service catalog containing the Messaging team's on-call channel and working hours appeared only at rank 5. This demonstrates that questions requiring evidence from multiple documents can be difficult when the supporting passages are not ranked together.
+
+For Custom question custom-05, the evaluation command and its configuration details were split across adjacent chunks. This illustrates how chunk boundaries can affect evidence matching and retrieval recall.
+
+The 800-character chunk configuration with 80-character overlap performed better overall than the smaller 400/40 configuration in the measured evidence-recall evaluation. However, retrieval recall does not measure answer correctness, factual completeness, or citation quality. Manual answer grading is still required.
+
 ## 3\. Retrieval Evaluation Results
 
 ### 3.1 Kestrel corpus
