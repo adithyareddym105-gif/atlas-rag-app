@@ -175,3 +175,39 @@ The Words tab confirmed that the KST-2044 identifier and the term `allowlist` we
 
 Overall, the smaller-chunk configuration is a reasonable candidate based on the measured retrieval metrics. Further work should focus on examining individual misses, evaluating generated answers against retrieved evidence, and testing whether the retrieval improvements translate into more accurate and better-grounded responses.
 
+
+## 8. V3 Graph Retrieval and Fusion
+
+### 8.1 Implementation
+
+V3 introduces three retrieval methods: dense semantic retrieval, BM25 keyword retrieval, and graph retrieval. The selected result lists are combined using Reciprocal Rank Fusion. The search API returns each result's `found_by` field, recording the rank at which each enabled retriever found that chunk.
+
+The graph is stored in `data/kestrel_graph.json`. Its triples use the fields `subject`, `relation`, `object`, and `source_chunk_id`. Pydantic validates the required fields. The current graph contains 10 entities and 7 edges, including:
+
+|Subject|Relation|Object|
+|---|---|---|
+|KST-1012|escalates_to|Identity|
+|KST-5031|escalates_to|Messaging|
+|KST-6002|escalates_to|Payments Core|
+|Identity|supported_by|#oncall-identity|
+|Messaging|supported_by|#oncall-messaging|
+|Payments Core|supported_by|#oncall-payments|
+
+### 8.2 Smoke-test evidence
+
+The following checks passed during implementation:
+
+- `python -m py_compile main.py rag\graph_retrieval.py rag\fusion.py`
+- `python -m pytest -q`: 6 passed.
+- `/api/health`: returned `status: healthy`.
+- `/api/search`: accepted Dense, BM25 and Graph together.
+- Query `KST-6002 bank approved payment`: the relevant chunk `kestrel:support-runbook-errors:10` was returned by Dense at rank 1, BM25 at rank 2 and Graph at rank 1.
+
+These are implementation smoke tests, not a full comparative evaluation. No V3 HitRate@k or Recall@k results are claimed.
+
+### 8.3 Limitations and future work
+
+Graph extraction currently uses deterministic rule-based patterns, not LLM-based triple extraction. The current implementation is a prototype and should be extended with schema-constrained LLM extraction, stronger entity resolution, and automated validation of extracted relationships.
+
+The test environment reported `llmConfigured: false`, so live Gemini generation and its token/cost measurements were not verified. A full V3 evaluation should compare Dense, Dense+BM25, and Dense+BM25+Graph across both corpora and report metrics by question type. It should also manually grade graph triples and investigate queries where adding a retriever worsens ranking.
+
