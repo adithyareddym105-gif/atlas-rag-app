@@ -1,0 +1,46 @@
+{
+  "triples": [
+    {
+      "subject": "KST-1012",
+      "relation": "escalates_to",
+      "object": "Identity",
+      "source_chunk_id": "kestrel:support-runbook-errors:3"
+    },
+    {
+      "subject": "Identity",
+      "relation": "supported_by",
+      "object": "#oncall-identity",
+      "source_chunk_id": "kestrel:service-catalog:3"
+    },
+    {
+      "subject": "Messaging",
+      "relation": "supported_by",
+      "object": "#oncall-messaging",
+      "source_chunk_id": "kestrel:service-catalog:3"
+    },
+    {
+      "subject": "Payments Core",
+      "relation": "supported_by",
+      "object": "#oncall-payments",
+      "source_chunk_id": "kestrel:service-catalog:4"
+    },
+    {
+      "subject": "KST-5031",
+      "relation": "escalates_to",
+      "object": "Messaging",
+      "source_chunk_id": "kestrel:support-runbook-errors:8"
+    },
+    {
+      "subject": "KST-6002",
+      "relation": "escalates_to",
+      "object": "Payments Core",
+      "source_chunk_id": "kestrel:support-runbook-errors:10"
+    },
+    {
+      "subject": "KST-6010",
+      "relation": "escalates_to",
+      "object": "Payments Core",
+      "source_chunk_id": "kestrel:support-runbook-errors:10"
+    }
+  ]
+}
