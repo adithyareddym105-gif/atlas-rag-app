@@ -72,3 +72,19 @@ Never commit `.env` or expose API keys. `.env.example` contains placeholders onl
 ## Limitations
 
 No-context evaluation, manual answer grading, question-level retrieval-miss diagnosis, and full upload/delete integration remain incomplete. See `REPORT.md` for details.
+## V3: Graph Retrieval and Reciprocal Rank Fusion
+
+V3 adds a graph-based retrieval path for the Kestrel corpus and combines enabled retrievers using Reciprocal Rank Fusion (RRF).
+
+- Dense semantic retrieval.
+- BM25 keyword retrieval.
+- Graph retrieval using extracted issue-to-team and team-to-on-call-channel relationships.
+- Pydantic validation of graph triples.
+- Chunk-level provenance stored on every graph edge.
+- RRF fusion with per-retriever rank information returned by the API.
+- Retriever selection through the search API.
+
+Graph extraction currently uses deterministic, rule-based patterns rather than LLM extraction. This is an implementation limitation, not an LLM extraction result. The graph currently contains 10 entities and 7 edges.
+
+The Gemini API key is not configured in the tested environment (`llmConfigured: false`). Therefore, live LLM answer generation was not verified in this V3 test run.
+

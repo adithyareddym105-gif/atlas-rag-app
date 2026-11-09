@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from rag.hybrid_retrieval import hybrid_search
+from rag.fusion import retrieve_detailed
 from rag.generation import generate_answer
 
 app = FastAPI(
@@ -17,6 +17,7 @@ class SearchRequest(BaseModel):
     query: str = Field(min_length=1)
     corpus: str = "kestrel"
     top_k: int = Field(default=5, ge=1, le=20)
+    retrievers: list[str] = Field(default_factory=lambda: ["dense", "bm25"])
 
 
 class ChunkResult(BaseModel):
@@ -24,6 +25,7 @@ class ChunkResult(BaseModel):
     source: str
     text: str
     hybrid_score: float
+    found_by: dict[str, int] = Field(default_factory=dict)
 
 
 class SearchResponse(BaseModel):
@@ -48,11 +50,11 @@ def search(request: SearchRequest):
         raise HTTPException(status_code=400, detail="Unknown corpus")
 
     try:
-        results = hybrid_search(
-            request.query,
-            top_k=request.top_k,
-            corpus_name=request.corpus,
+        retrieval = retrieve_detailed(
+            request.query, top_k=request.top_k,
+            corpus_name=request.corpus, retrievers=request.retrievers,
         )
+        results = retrieval["results"]
 
         return {
             "query": request.query,
@@ -63,6 +65,7 @@ def search(request: SearchRequest):
                     "source": item["source"],
                     "text": item["text"],
                     "hybrid_score": item["hybrid_score"],
+                    "found_by": item.get("found_by", {}),
                 }
                 for item in results
             ],
@@ -86,11 +89,11 @@ def answer(request: SearchRequest):
     if request.corpus not in {"kestrel", "custom"}:
         raise HTTPException(status_code=400, detail="Unknown corpus")
     try:
-        results = hybrid_search(
-            request.query,
-            top_k=request.top_k,
-            corpus_name=request.corpus,
+        retrieval = retrieve_detailed(
+            request.query, top_k=request.top_k,
+            corpus_name=request.corpus, retrievers=request.retrievers,
         )
+        results = retrieval["results"]
         generated = generate_answer(request.query, results)
         return {
             "query": request.query,
@@ -104,6 +107,7 @@ def answer(request: SearchRequest):
                     "source": item["source"],
                     "text": item["text"],
                     "hybrid_score": item["hybrid_score"],
+                    "found_by": item.get("found_by", {}),
                 }
                 for item in results
             ],
